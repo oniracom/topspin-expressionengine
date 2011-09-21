@@ -29,6 +29,7 @@ FEATURES
 INSTALL INSTRUCTIONS
 ===
 The folder structure mimics which folders you should copy the files to in your EE install.  The installation process is very similar to most EE modules
+
 * system/language/english/lang.topspin.php goes into your system/language/english folder
 * system/modules/topspin goes in your system/modules folder
 * themes/third_party/topspin goes in your themes/third_party folder
