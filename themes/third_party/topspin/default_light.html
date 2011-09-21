@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>{exp:topspin:template_title}</title>
+
+<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<style type="text/css">
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  outline: none;
+}
+
+body { 
+  line-height: 1.5; 
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  background: #eee;
+}
+table { border-collapse: separate; border-spacing: 0; }
+caption, th, td { text-align: left; font-weight: normal; }
+table, td, th { vertical-align: middle; }
+a img { border: none; }
+.float-right {float: right;}
+.float-left { float: left;}
+#top {
+	background-color: #333;
+	border: 0 none;
+	font-size: 100%;
+   	line-height: inherit;
+   	margin: 0;
+   	outline: 0 none;
+   	padding: 0;
+   	vertical-align: baseline;
+}
+.page-title {
+    color: #FFFFFF;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+    text-shadow: 0 1px 1px #111111;
+    width: 960px;
+}
+
+#page {
+	background: none repeat scroll 0 0 #F4F4F4;
+    border-radius: 3px 3px 3px 3px;
+    padding: 5px;
+    width: 950px;
+    box-shadow: 0 0 3px #CCCCCC;
+    margin: 20px auto;
+}
+#tax_menu {
+	background: none repeat scroll 0 0 #FFFFFF;
+	   border-color: #CCCCCC #DDDDDD #EEEEEE;
+	   border-style: solid;
+	   border-width: 1px;
+	   margin: 5px;
+}
+.block-content {
+	background: none repeat scroll 0 0 #FFFFFF;
+	   padding: 10px 9px 9px;
+}
+.content-wrapper {
+	margin: 5px;
+}
+ul.links {
+	 list-style: none outside none;
+	 font-size: .9em;
+}
+ul.links a.active { color: #000;}
+a {
+	color: #3399CC;
+	    text-decoration: none;
+}
+#left {
+	float: left;
+	width: 19%;
+}
+#content {
+	float: right;
+	width: 81%;
+}
+#page.single-page #content { width: auto; float: none;}
+.clear {
+	clear: both;
+}
+#topspin-grid {
+	 background-color: #FFFFFF;
+	     border-collapse: collapse;
+	     border-color: #CCCCCC #DDDDDD #EEEEEE;
+	     border-style: solid;
+	     border-width: 1px;
+	     font-size: 11px;
+	     line-height: 15px;
+	     margin: 0 0 10px;
+	     width: 100%;
+}
+#topspin-grid td {
+	padding: 20px;
+	vertical-align: top;
+	width: 50%;
+	     
+	border-color: #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
+}
+#topspin-grid td.odd {
+	border-right: 1px solid #CCCCCC;
+	
+}
+
+.topspin-grid-item {
+	overflow: hidden;
+	   position: relative;
+	   
+}
+.topspin-grid-item-price {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 3px 10px 0 0;
+}
+.topspin-grid-item-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin: 0 0 15px;
+}
+
+.topspin-grid-item-image {
+	float: left;
+	    margin: 0 15px 0 0;
+}
+
+.topspin-grid-item-body {
+   margin: 0 0 15px;
+   font-size: 100%;
+}
+
+.topspin-grid-item-embed {
+	bottom: 5px;
+	   position: absolute;
+	   right: 10px;
+}
+
+.topspin-grid-item-more {
+	bottom: 5px;
+	    left: 165px;
+	    position: absolute;
+}
+.topspin-grid-item-links {
+	clear: both;
+	float: none;
+	margin-top: 20px;
+}
+li.fb_like {
+	float: left;
+}
+.topspin-grid-item-extra-images {
+	clear: both;
+  	overflow: hidden;
+  	padding: 10px 0 0;
+  	width: 360px;
+}
+.detail-nav {
+    font-size: 0.9em;
+    margin: 0 auto;
+    padding: 0;
+    text-align: right;
+    width: 960px;
+}
+.detail-nav a { color: #000; font-size: .9em; text-transform: uppercase;}
+
+
+/* SLIMBOX */
+
+#lbOverlay {
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+
+#lbCenter, #lbBottomContainer {
+	position: absolute;
+	z-index: 9999;
+	overflow: hidden;
+	background-color: #fff;
+}
+
+.lbLoading {
+	background: #fff url({exp:topspin:css_path}loading.gif) no-repeat center;
+}
+
+#lbImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: 10px solid #fff;
+	background-repeat: no-repeat;
+}
+
+#lbPrevLink, #lbNextLink {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 50%;
+	outline: none;
+}
+
+#lbPrevLink {
+	left: 0;
+}
+
+#lbPrevLink:hover {
+	background: transparent url({exp:topspin:css_path}prevlabel.gif) no-repeat 0 15%;
+}
+
+#lbNextLink {
+	right: 0;
+}
+
+#lbNextLink:hover {
+	background: transparent url({exp:topspin:css_path}nextlabel.gif) no-repeat 100% 15%;
+}
+
+#lbBottom {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+	line-height: 1.4em;
+	text-align: left;
+	border: 10px solid #fff;
+	border-top-style: none;
+}
+
+#lbCloseLink {
+	display: block;
+	float: right;
+	width: 66px;
+	height: 22px;
+	background: transparent url({exp:topspin:css_path}closelabel.gif) no-repeat center;
+	margin: 5px 0;
+	outline: none;
+}
+
+#lbCaption, #lbNumber {
+	margin-right: 71px;
+}
+
+#lbCaption {
+	font-weight: bold;
+}
+
+</style>
+</head>
+<body id="index" class="home">
+	<div id="top">
+		<div class="page-title">
+		
+		<h1>{exp:topspin:template_title}</h1>
+		
+		</div>
+		
+	</div>
+	<div id="page" {exp:topspin:template_store_detail}class="single-page"{/exp:topspin:template_store_detail}>
+		{exp:topspin:template_tags}
+			<div id="left">
+				<div id="tax_menu">
+					<div class="block-content">
+						<ul class="links">
+							{tag}<li><a href="{link}" {current}class="active" {/current}>{text}</a></li>{/tag}
+						</ul>
+					</div>
+				</div>
+			</div>
+		{/exp:topspin:template_tags}
+		<div id="content">
+			<div class="content-wrapper">
+				{exp:topspin:template_store_grid}
+				<table id="topspin-grid">
+					
+						{row_begin}<tr>{/row_begin}
+						{col offer_type="buy_button"}
+							<td class="{switch="odd|even"}">
+								<div class="topspin-grid-item">
+									<div class="topspin-grid-item-price">{item_price}</div>
+									{item_detail}<div class="topspin-grid-item-title"><a href="{link}">{item_name}</a></div>{/item_detail}
+									<div class="topspin-grid-item-image">{if item_image}<img src="{item_image}" width="150" height="150"/>{/if}</div>
+									<div class="topspin-grid-item-body"><p>{item_description}</p></div>
+									<div class="topspin-grid-item-embed">{item_embed}</div>
+									{item_detail}<div class="topspin-grid-item-more"><a href="{link}">More info &raquo;</a></div>{/item_detail}
+								</div>
+							</td>
+						{/col}
+						{col offer_type="bundle_widget|single_track_player_widget|email_for_media|fb_for_media"}
+							<td class="{switch="odd|even"}">
+								<div class="topspin-grid-item">
+									<div >{item_embed}</div>
+								</div>
+							</td>
+						{/col}
+						{row_end}</tr>{/row_end}
+						
+						{paginate}
+						<tr>
+							<td>{paginate_left}<a href="{link}">Prev</a>{/paginate_left}&nbsp;</td>
+							<td>{paginate_right}<a href="{link}">Next</a>{/paginate_right}&nbsp;</td>
+						</tr>
+						{/paginate}
+					
+				</table>
+				{/exp:topspin:template_store_grid}
+				{exp:topspin:template_store_detail}
+				<div class="topspin-grid-item">
+					<div class="topspin-grid-item-price">{item_price}</div>
+					<div class="topspin-grid-item-title"><a href="#">{item_name}</a></div>
+					<div class="topspin-grid-item-image"><img src="{item_image}" width="180" height="180"/></div>
+					<div class="topspin-grid-item-body"><p>{item_description}</p></div>
+					<div class="topspin-grid-item-embed">{item_embed}</div>
+					<div class="topspin-grid-extra-images">{item_extra_images}<a class="lightbox" href="{large_photo}" rel="lightbox-photos"><img src="{small_photo}" ></a>{/item_extra_images}</div>
+					<div class="topspin-grid-item-links">
+						<ul class="links">
+							<li class="fb_like">{item_fb_like}</li>
+							<li class="fb_like">{item_tweet}</li>
+						</ul>
+					</div>
+				</div>
+				{/exp:topspin:template_store_detail}
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	{exp:topspin:template_store_detail}
+			<div class="detail-nav"><a href="javascript:history.go(-1);">&laquo; back to store</a></div>
+		{/exp:topspin:template_store_detail}
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+	<script src="{exp:topspin:jquery_lightbox_js}" type="text/javascript"></script>
+
+	
+</body>
+</html>
